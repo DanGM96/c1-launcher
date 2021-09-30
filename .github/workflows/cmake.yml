@@ -17,6 +17,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Install MSVC2005
+        run: choco install vcredist2005
+
       - name: Setup32
         uses: ilammy/msvc-dev-cmd@v1.9.0
         with:
