@@ -18,15 +18,13 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Install MSVC2005
-        run: |
-          choco install vcredist2005
-          cmake.exe --help
+        run: choco install vcredist2005
 
       - name: Setup32
         uses: ilammy/msvc-dev-cmd@v1.9.0
         with:
           arch: x86
-          toolset: 8.0
+          toolset: 9.0
 
       - name: Build32
         run: |
@@ -40,7 +38,7 @@ jobs:
         uses: ilammy/msvc-dev-cmd@v1.9.0
         with:
           arch: x64
-          toolset: 8.0
+          toolset: 9.0
 
       - name: Build64
         run: |
